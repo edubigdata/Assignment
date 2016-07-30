@@ -6,7 +6,7 @@ Use the following command to run it.
 Intellij
 .............
 
-Gp To:
+Go To:
 > Run, on the top bar
 > Edit Configuration
 > Main Class: Should be in your respective folder, in my case ( com.assignment.users.deo.DeoRunner)
