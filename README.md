@@ -8,6 +8,7 @@ Intellij
 
 Go To:
 > Run: Click on the top bar menu
+
 > Choose: Edit Configuration
 
 Enter the following details in the Configuration.
