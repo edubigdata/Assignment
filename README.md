@@ -25,3 +25,6 @@ Enter the following details in the Configuration.
 
 >Choose classpath of Module:
  Assignment
+
+
+> Result: You will see the result.txt file in resource/output folder in case of successful run.
