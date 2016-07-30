@@ -27,4 +27,7 @@ Enter the following details in the Configuration.
  Assignment
 
 
-> Result: You will see the result.txt file in resource/output folder in case of successful run.
+Result: You will see the result.txt file in resource/output folder in case of successful run.
+
+> resource/output/result.txt/part-r-00000
+> Total Count - 4
