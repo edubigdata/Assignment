@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Properties;
-import java.util.Set;
 
 public class DependencyInjectionModule extends AbstractModule {
 
@@ -20,7 +19,6 @@ public class DependencyInjectionModule extends AbstractModule {
 
     protected String applicationProperties;
 
-    private String xlsxFilePath;
 
     /**
      * Method constructs a path to an application.properties file
@@ -34,15 +32,8 @@ public class DependencyInjectionModule extends AbstractModule {
         return path.toString();
     }
 
-
-    // Potential candiate for deletion as this is replaced by overloaded method below
-    public DependencyInjectionModule(String xlsxFilePath) {
-        this.xlsxFilePath = xlsxFilePath;
-    }
-
     public DependencyInjectionModule(String xlsxFilePath, String environment) {
         applicationProperties=getApplicationProperties(environment);
-        this.xlsxFilePath = xlsxFilePath;
     }
 
     @Override
@@ -56,15 +47,6 @@ public class DependencyInjectionModule extends AbstractModule {
         Properties props = null;
         try {
             props = loadProperties(applicationProperties);
-            if(xlsxFilePath != null){
-                Set<Object> keys = getAllKeys(props);
-                for(Object k:keys){
-                    String key = (String)k;
-                    if(key.equals("xml.xpath.rule.xlsxfile")){
-                        props.put(key, xlsxFilePath);
-                    }
-                }
-            }
         } catch (IOException ex) {
             log.error(" Error while loading property file : ", ex);
         }
@@ -82,16 +64,6 @@ public class DependencyInjectionModule extends AbstractModule {
         bind(com.assignment.users.akash.AssignmentImpl.class);
         log.info(" Binding was successful ");
     }
-
-    public Set<Object> getAllKeys(Properties prop){
-        Set<Object> keys = prop.keySet();
-        return keys;
-    }
-
-    public String getPropertyValue(Properties prop, String key){
-        return prop.getProperty(key);
-    }
-
     private Properties loadProperties(String propertyFile) throws IOException {
         Properties properties = new Properties();
         properties.load(getClass().getResourceAsStream(propertyFile));
