@@ -3,7 +3,9 @@ Guys Have fun:
 
 Use the following command to run it.
 
-Intellij
+git clone git@github.com:edubigdata/Assignment.git Assignment
+
+Intellij (I use Intellij)
 .............
 
 Go To:
