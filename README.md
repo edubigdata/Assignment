@@ -18,7 +18,9 @@ Enter the following details in the Configuration.
 > Program Argumnets should be as follows:
 
 -input "file:///Users/deokishore/Development5/Assignment/src/main/resources/input/Othello.txt"
+
 -output "file:///Users/deokishore/Development5/Assignment/src/main/resources/output/result.txt"
+
 -word "Othello" -environment "local"
 
 >Choose classpath of Module:
